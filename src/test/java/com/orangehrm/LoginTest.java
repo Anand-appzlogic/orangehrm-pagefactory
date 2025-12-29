@@ -4,6 +4,8 @@ import java.time.Duration;
 
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
 public class LoginTest extends BaseClass {
@@ -13,7 +15,7 @@ public class LoginTest extends BaseClass {
     	String env = System.getProperty("env", "test");
 
     	String username = System.getProperty(
-    	        "username",
+    	        "username", 
     	        prop.getProperty("username")
     	);
 
@@ -34,6 +36,7 @@ public class LoginTest extends BaseClass {
                 "Login failed");
         }
     
+    
     @Test(priority = 2, dependsOnMethods = "testLoginAndMyInfo")
     public void myInfoTest() {
 
@@ -50,6 +53,18 @@ public class LoginTest extends BaseClass {
     	performance.clickPerformance();
     	Assert.assertTrue(driver.getCurrentUrl().contains("searchEvaluatePerformanceReview"), 
     			"performance page not opned");
+    }
+    
+    @Test(priority = 4)
+    public void failedTestDemo() {
+        Assert.assertTrue(false, "This test is designed to fail to check screenshot");
+    }
+    
+    @AfterMethod
+    public void captureScreenshotOnFailure(ITestResult result) {
+        if (result.getStatus() == ITestResult.FAILURE) {
+            screenshotUtil.captureScreenshot(result.getName());
+        }
     }
      
     

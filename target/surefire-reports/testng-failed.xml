@@ -6,8 +6,10 @@
       <class name="com.orangehrm.LoginTest">
         <methods>
           <include name="myInfoTest"/>
+          <include name="failedTestDemo"/>
           <include name="testLoginAndMyInfo"/>
           <include name="performanceTest"/>
+          <include name="captureScreenshotOnFailure"/>
           <include name="setup"/>
           <include name="tearDown"/>
         </methods>
