@@ -1,5 +1,8 @@
-com\orangehrm\MyInfoPage.class
-com\orangehrm\ScreenshotUtil.class
-com\orangehrm\Performance.class
-com\orangehrm\LoginPage.class
+utils\HighlightUtil.class
+failure\AIFailureAnalyzer.class
+pages\LoginPage.class
+listeners\TestListener.class
+pages\Performance.class
 com\orangehrm\BaseClass.class
+utils\ScreenshotUtil.class
+pages\MyInfoPage.class

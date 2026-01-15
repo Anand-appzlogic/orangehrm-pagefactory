@@ -8,6 +8,11 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
+import listeners.RetryAnalyser;
+import pages.LoginPage;
+import pages.MyInfoPage;
+import pages.Performance;
+
 public class LoginTest extends BaseClass {
 
     @Test(priority = 1)
@@ -55,17 +60,14 @@ public class LoginTest extends BaseClass {
     			"performance page not opned");
     }
     
-    @Test(priority = 4)
+    @Test(priority = 4 , retryAnalyzer = RetryAnalyser.class )
     public void failedTestDemo() {
         Assert.assertTrue(false, "This test is designed to fail to check screenshot");
     }
     
-    @AfterMethod
-    public void captureScreenshotOnFailure(ITestResult result) {
-        if (result.getStatus() == ITestResult.FAILURE) {
-            screenshotUtil.captureScreenshot(result.getName());
-        }
+   
+    
     }
      
     
-}
+

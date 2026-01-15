@@ -8,6 +8,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
+import utils.ScreenshotUtil;
+
 public class BaseClass {
 	
 public WebDriver driver;

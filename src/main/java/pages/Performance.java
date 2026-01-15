@@ -1,10 +1,11 @@
-package com.orangehrm;
+package pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import utils.HighlightUtil;
 
 @AllArgsConstructor
 @Getter
@@ -19,7 +20,9 @@ public class Performance {
 		
 	}
 	public void clickPerformance() {
-		performancePage.click();
+	    HighlightUtil.highlight(driver, performancePage);
+	    performancePage.click();
 	}
+
 
 }
